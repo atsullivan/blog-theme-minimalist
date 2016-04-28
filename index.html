@@ -18,15 +18,41 @@
 
   <body>
 
-    <a id="loginPanel">toggle</a>
-    <div id="userNav">User Area</div>
+    <div class="background" id ="background"></div>
+
+    <div class="container content">
+      <div class="row">
+        <div class="col-md-10"></div>
+        <div class="col-md-2">
+          <ul class="main-section">
+            <li class="article"><a>This is an article title</a></li>
+            <li class="article"><a>4</a></li>
+            <li class="article"><a>3</a></li>
+            <li class="article"><a>2</a></li>
+            <li class="article"><a>1</a></li>
+            <hr>
+            <li><a>about</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    
+
+
+    <div id="userNav">
+      <a class="article">close</a>
+      User Area
+    </div>
 
     <script type="text/javascript">
-      $('#loginPanel').click(function(){               
+      $('.article').click(function(){               
         if ($('#userNav').is(':hidden')) {           
            $('#userNav').show('slide',{direction:'left'},500);
+           document.getElementById("background").className = "background blur";
+           console.log("Article open.  Image blur.");
         } else {           
            $('#userNav').hide('slide',{direction:'left'},500);
+           document.getElementById("background").className = "background";
         }
       });
     </script>
